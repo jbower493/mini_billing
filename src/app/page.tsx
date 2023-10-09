@@ -1,3 +1,3 @@
 export default function () {
-    return null;
+    return <h1>Home</h1>;
 }

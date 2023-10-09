@@ -1,0 +1,16 @@
+:root {
+    --color-purple-300: #e9d5ff;
+    --color-purple-400: #d8b4fe;
+    --color-purple-500: #c084fc;
+    --color-purple-600: #a855f7;
+    --color-purple-700: #7e22ce;
+
+    --color-primary-light: var(--color-purple-300);
+    --color-primary-semilight: var(--color-purple-400);
+    --color-primary-base: var(--color-purple-500);
+    --color-primary-semidark: var(--color-purple-600);
+    --color-primary-dark: var(--color-purple-700);
+
+    --color-text-button-primary-default: var(--color-primary-base);
+    --color-text-button-primary-hover: var(--color-primary-semidark);
+}

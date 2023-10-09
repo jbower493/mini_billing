@@ -1,0 +1,54 @@
+SUPER GLOBAL TOKENS
+    color
+        purple
+            100
+            ...
+            900
+        gray
+            100
+            ...
+            900
+        white
+            500
+        black
+            500
+
+GLOBAL TOKENS
+    color
+        primary
+            light
+            semilight
+            base
+            semidark
+            dark
+        gray
+            light
+            semilight
+            base
+            semidark
+            dark
+        white
+            base
+        black
+            base
+
+
+// category.usage.component.variant, eg. color.text.button.default
+ALIAS TOKENS
+    color
+        text
+            button
+                primary
+                    default: color.white.base
+        background
+            button
+                primary
+                    default: color.primary.base
+                    hover: color.primary.semidark
+            tab
+                primary
+                    default: color.primary.light      // This would be expressed as something like "--color_text_button_primary_default"
+                    selected: color.primary.semilight // This would be expressed as something like "--color_text_button_primary_selected"
+
+
+

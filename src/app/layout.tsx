@@ -1,6 +1,7 @@
-import { prisma } from "@/prisma/db";
 import "./globals.css";
 import type { Metadata } from "next";
+import SessionProvider from "./SessionProvider";
+import { getServerSession } from "next-auth/next";
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -9,24 +10,17 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
     children,
-    guest,
-    user,
 }: {
     children: React.ReactNode;
-    guest: React.ReactNode;
-    user: React.ReactNode;
 }) {
-    const loggedInUser = await prisma.user.findFirst({
-        where: {
-            email: "jamie@jamie.coms",
-        },
-    });
+    const session = await getServerSession();
+
+    console.log(session);
 
     return (
         <html lang="en">
             <body>
-                {children}
-                {loggedInUser ? user : guest}
+                <SessionProvider session={session}>{children}</SessionProvider>
             </body>
         </html>
     );
