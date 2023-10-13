@@ -20,6 +20,7 @@ export default async function RootLayout({
     return (
         <html lang="en">
             <body>
+                {/* Adding this SessionProvider causes a "session" fetch request to happen on every page load */}
                 <SessionProvider session={session}>{children}</SessionProvider>
             </body>
         </html>
