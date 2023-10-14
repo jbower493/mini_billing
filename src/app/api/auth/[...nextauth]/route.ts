@@ -1,5 +1,7 @@
 import NextAuth, { AuthOptions } from "next-auth";
 import DiscordProvider from "next-auth/providers/discord";
+import { PrismaAdapter } from "@next-auth/prisma-adapter";
+import { prisma } from "@/prisma/db";
 
 const authOptions: AuthOptions = {
     providers: [
@@ -15,8 +17,9 @@ const authOptions: AuthOptions = {
     ],
     session: {
         // Use this option to store session data in my database
-        // strategy: "database",
+        strategy: "database",
     },
+    adapter: PrismaAdapter(prisma),
     // callbacks: {
     //     session({
     //         // The session object, which includes the user as stored in the auth provider (Discord etc)
