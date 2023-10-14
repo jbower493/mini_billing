@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Button from "../../../components/Button";
 import classes from "./header.module.css";
-import { signOut } from "next-auth/react";
 
 export default function Header() {
     return (
@@ -11,7 +10,7 @@ export default function Header() {
             <Link href="/" className={classes.companyName}>
                 Mini<span className={classes.span}>Billing</span>
             </Link>
-            <Button onClick={() => signOut()}>Logout</Button>
+            <Button onClick={() => console.log("logging out")}>Logout</Button>
         </header>
     );
 }
