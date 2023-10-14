@@ -1,0 +1,19 @@
+.header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    box-shadow: var(--purple-100) 0px 8px 24px;
+}
+
+.companyName {
+    font-size: 24px;
+    font-weight: 800;
+    text-decoration: none;
+    color: var(--color-text-black-default);
+}
+
+.span {
+    color: var(--color-text-primary-default);
+}

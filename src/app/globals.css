@@ -4,6 +4,99 @@
     box-sizing: border-box;
 }
 
+:root {
+    /*
+    * RAW VALUES
+    */
+    /* COLORS */
+    --black: #000000;
+    --white: #ffffff;
+
+    --purple-100: #faf5ff;
+    --purple-200: #f3e8ff;
+    --purple-300: #e9d5ff;
+    --purple-400: #d8b4fe;
+    --purple-500: #c084fc;
+    --purple-600: #a855f7;
+    --purple-700: #7e22ce;
+    --purple-800: #6b21a8;
+    --purple-900: #581c87;
+
+    --grey-100: #f3f4f6;
+    --grey-200: #e5e7eb;
+    --grey-300: #d1d5db;
+    --grey-400: #9ca3af;
+    --grey-500: #6b7280;
+    --grey-600: #4b5563;
+    --grey-700: #374151;
+    --grey-800: #1f2937;
+    --grey-900: #111827;
+
+    /*
+    * NAMED COLORS
+    */
+    --color-primary-100: var(--purple-100);
+    --color-primary-200: var(--purple-200);
+    --color-primary-300: var(--purple-300);
+    --color-primary-400: var(--purple-400);
+    --color-primary-500: var(--purple-500);
+    --color-primary-600: var(--purple-600);
+    --color-primary-700: var(--purple-700);
+    --color-primary-800: var(--purple-800);
+    --color-primary-900: var(--purple-900);
+
+    --color-secondary-100: var(--grey-100);
+    --color-secondary-200: var(--grey-200);
+    --color-secondary-300: var(--grey-300);
+    --color-secondary-400: var(--grey-400);
+    --color-secondary-500: var(--grey-500);
+    --color-secondary-600: var(--grey-600);
+    --color-secondary-700: var(--grey-700);
+    --color-secondary-800: var(--grey-800);
+    --color-secondary-900: var(--grey-900);
+
+    /*
+    * GLOBAL TOKENS
+    */
+    /* COLORS */
+    /* --color-primary-light: var(--color-primary-500);
+    --color-primary-semilight: var(--color-primary--600);
+    --color-primary-base: var(--color-primary-700);
+    --color-primary-semidark: var(--color-primary-800);
+    --color-primary-dark: var(--color-primary-900);
+
+    --color-secondary-light: var(--color-secondary-300);
+    --color-secondary-semilight: var(--color-secondary--400);
+    --color-secondary-base: var(--color-secondary-500);
+    --color-secondary-semidark: var(--color-secondary-600);
+    --color-secondary-dark: var(--color-secondary-700); */
+
+    /*
+    * ALIAS TOKENS
+    */
+    /* COLORS */
+    /* Text */
+    --color-text-white-default: var(--white);
+    --color-text-black-default: var(--black);
+
+    --color-text-primary-default: var(--color-primary-700);
+
+    --color-text-secondary-default: var(--color-secondary-500);
+
+    /* Background */
+    --color-background-primary-default: var(--color-primary-700);
+    --color-background-primary-hover: var(--color-primary-800);
+
+    --color-background-white-hover: var(--color-secondary-100);
+
+    /* Border */
+    --color-border-secondary-default: var(--color-secondary-300);
+
+    /* Box shadow */
+    --color-box-shadow-primary-default: var(--color-primary-100);
+}
+
 body {
-    font-family: ui-monospace;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color-text-black-default);
 }

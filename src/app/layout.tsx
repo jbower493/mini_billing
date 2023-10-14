@@ -1,7 +1,5 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import SessionProvider from "./SessionProvider";
-import { getServerSession } from "next-auth/next";
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -13,16 +11,9 @@ export default async function RootLayout({
 }: {
     children: React.ReactNode;
 }) {
-    const session = await getServerSession();
-
-    console.log(session);
-
     return (
         <html lang="en">
-            <body>
-                {/* Adding this SessionProvider causes a "session" fetch request to happen on every page load */}
-                <SessionProvider session={session}>{children}</SessionProvider>
-            </body>
+            <body>{children}</body>
         </html>
     );
 }
