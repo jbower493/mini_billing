@@ -1,5 +1,10 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import { prisma } from "@/prisma/db";
+import Header from "./components/header";
+import Sidebar from "./components/sidebar";
+import classes from "./loggedIn.module.css";
+import { cookies } from "next/headers";
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -7,13 +12,55 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({
-    children,
+    loggedIn,
+    notLoggedIn,
 }: {
-    children: React.ReactNode;
+    loggedIn: React.ReactNode;
+    notLoggedIn: React.ReactNode;
 }) {
+    async function getCurrentlyLoggedInUser() {
+        const sessionId = cookies().get("mb_session")?.value;
+
+        if (!sessionId) {
+            return null;
+        }
+
+        const currentSession = await prisma.session.findUnique({
+            where: {
+                id: Number(sessionId),
+            },
+        });
+
+        if (!currentSession?.admin_id) {
+            return null;
+        }
+
+        const loggedInUser = await prisma.admin.findUnique({
+            where: { id: currentSession.admin_id },
+        });
+
+        return loggedInUser;
+    }
+
+    const loggedInUser = await getCurrentlyLoggedInUser();
+
+    function renderUnauthed() {
+        return notLoggedIn;
+    }
+
+    function renderAuthed() {
+        return (
+            <div className={classes.loggedIn}>
+                <Header />
+                <Sidebar />
+                <main className={classes.main}>{loggedIn}</main>
+            </div>
+        );
+    }
+
     return (
         <html lang="en">
-            <body>{children}</body>
+            <body>{loggedInUser ? renderAuthed() : renderUnauthed()}</body>
         </html>
     );
 }

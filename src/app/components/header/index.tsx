@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Button from "../../../components/Button";
+import Button from "../Button";
 import classes from "./header.module.css";
 
 export default function Header() {

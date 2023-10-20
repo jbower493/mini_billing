@@ -88,6 +88,7 @@
     --color-background-primary-hover: var(--color-primary-800);
 
     --color-background-white-hover: var(--color-secondary-100);
+    --color-background-sidebarItem-hover: var(--color-primary-100);
 
     /* Border */
     --color-border-secondary-default: var(--color-secondary-300);

@@ -20,4 +20,5 @@
 
 .navItem:hover {
     background-color: var(--color-background-white-hover);
+    background-color: var(--color-background-sidebarItem-hover);
 }
