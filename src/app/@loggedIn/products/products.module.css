@@ -1,0 +1,28 @@
+.products {
+    padding: 20px;
+}
+
+.title {
+    margin-bottom: 30px;
+}
+
+.product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.product:not(:first-of-type) {
+    margin-top: 10px;
+}
+
+.product p {
+    font-size: 18px;
+}
+
+.editButton {
+    min-width: 100px !important;
+    height: 35px !important;
+}

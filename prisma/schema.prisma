@@ -23,3 +23,8 @@ model session {
     id        Int     @id @default(autoincrement())
     admin_id  Int?     
 }
+
+model product {
+    id        Int     @id @default(autoincrement())
+    name  String? @db.VarChar(255)
+}

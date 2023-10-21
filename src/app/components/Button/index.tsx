@@ -1,6 +1,7 @@
 "use client";
 
 import classes from "./Button.module.css";
+import ButtonLink from "./Link";
 
 interface ButtonProps {
     children: React.ReactNode;
@@ -10,7 +11,7 @@ interface ButtonProps {
     isDisabled?: boolean;
 }
 
-export default function Button({
+function Button({
     type = "submit",
     children,
     onClick,
@@ -23,3 +24,5 @@ export default function Button({
         </button>
     );
 }
+
+export default Button;
