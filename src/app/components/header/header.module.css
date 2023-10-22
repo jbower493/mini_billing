@@ -17,3 +17,9 @@
 .span {
     color: var(--color-text-primary-default);
 }
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
