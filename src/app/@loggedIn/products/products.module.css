@@ -2,8 +2,23 @@
     padding: 20px;
 }
 
+.addButtonContainer {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.addButton {
+    min-width: 120px;
+}
+
 .title {
     margin-bottom: 30px;
+}
+
+.productList {
+    max-width: 500px;
 }
 
 .product {
@@ -11,7 +26,6 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 500px;
 }
 
 .product:not(:first-of-type) {
